@@ -113,3 +113,16 @@ On the surface, JavaScript has no facility for block scope. With some exceptions
 Block scoping can help the garbage collector making clearer to the engine that it does not need to keep some code around.
 
 Every attempt to change a const value results in an error.
+
+## Hoisting
+
+JavaScript splits the statement `var a = 2`, into two statements, `var a` and `a = 2`. The first statement, the declartion, is processed during the compilation phase. The second one, the assignment, is left in place for the execution phase.
+
+Variable and function declarations are "moved" from where they are written to the top of their block. This is hoisting.
+Assignment and other executable logic are left in place.
+
+Hoisting is per scope.
+
+Function declarations are hoisted, but function expressions are not.
+
+Function declaraions that appear inside normal blocks typically hoist to the enclosing scope.
