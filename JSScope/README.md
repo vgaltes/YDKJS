@@ -126,3 +126,26 @@ Hoisting is per scope.
 Function declarations are hoisted, but function expressions are not.
 
 Function declaraions that appear inside normal blocks typically hoist to the enclosing scope.
+
+
+## Closures
+
+Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope. Still has reference to the scope, and that reference is called closure.
+
+Whatever facility we use to transport an inner function outside of its lexical scope, it will maintain a scope reference to where it was originally declared.
+
+Whenever and wherever you treat functions as first-class values and pass them around, you are likely to see those functions exercising closure.
+
+### Modules
+
+The module patter leverage the power of closure as well. In its simpler form is a function that returns an object that has references ot its internal functions. Those functions has closure over the inner scope of the module.
+
+Another variations are:
+ - Use an IIFE
+ - Name the object you return so you can access it from inside the module and change the behaviour.
+
+## Lexical this
+
+The *this* binding is lost when calling a function on, for example, a callback. We usually solve this with `var self = this;`.
+
+But arrow functions solve this problem by introducing a behaviour called lexical this. In an arrow function, *this* doesn't follow the normal rules, but takes the value of its immediate enclosing scope.

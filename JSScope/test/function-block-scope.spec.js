@@ -95,8 +95,6 @@ describe("IIFE", function(){
             return [a, globalScope.a];
         });
 
-        console.log(result);
-
         result.should.deep.equal([3, 22]);
     });
 });
